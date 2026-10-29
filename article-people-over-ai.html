@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>People Over AI — Tech ConnectIT</title>
+<meta name="description" content="Why the companies that put their people first will win the AI era — and the ones that lead with replacement will optimize themselves into commodities.">
+<style>
+  :root{
+    --bg:#070d1a; --bg2:#0b1526; --panel:rgba(21,34,61,.72); --line:#22345e;
+    --ink:#eaf1fc; --muted:#a3b7d9; --accent:#3ea6ff; --accent2:#7c5cff;
+    --max:1100px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid rgba(34,52,94,.7);background:rgba(7,13,26,.82);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:20px;color:var(--ink)}
+  .brand .mark{width:34px;height:34px;flex:none}
+  .brand .ai{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav .tag{color:var(--muted);font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase}
+  @media(max-width:820px){.nav .tag{display:none}}
+  .nav nav a{color:var(--muted);margin-left:20px;font-size:15px}
+  .nav nav a:hover{color:var(--ink);text-decoration:none}
+  .nav nav a.current{color:var(--ink)}
+  .kicker{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;margin-bottom:20px}
+  .btn{display:inline-block;padding:13px 28px;border-radius:999px;font-weight:650;font-size:16px}
+  .btn-primary{background:linear-gradient(92deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 8px 28px rgba(62,166,255,.35)}
+  .btn-primary:hover{text-decoration:none;filter:brightness(1.1)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(21,34,61,.5)}
+  .btn-ghost:hover{text-decoration:none;border-color:var(--accent)}
+  .article-wrap{max-width:780px;margin:0 auto;padding:0 24px}
+  .article-head{padding:72px 0 8px;background:
+    radial-gradient(900px 420px at 85% -10%,rgba(62,166,255,.18),transparent 60%),
+    radial-gradient(700px 380px at 0% 0%,rgba(124,92,255,.14),transparent 55%),var(--bg)}
+  .article-head h1{font-size:42px;line-height:1.15;font-weight:800;letter-spacing:-.5px}
+  @media(max-width:820px){.article-head h1{font-size:32px}}
+  .article-meta{color:var(--muted);font-size:15.5px;margin-top:20px}
+  .article-meta .byline{color:var(--ink);font-weight:650}
+  section.article-main{padding:44px 0 66px}
+  .article-body{font-size:17.5px}
+  .article-body p{color:#d9e5f7;margin-bottom:22px}
+  .article-body p.lede{font-size:19px;color:var(--muted)}
+  .article-body h2{font-size:27px;font-weight:750;letter-spacing:-.3px;margin:40px 0 14px}
+  .article-body h3{font-size:21px;font-weight:700;margin:32px 0 10px}
+  .article-body ul,.article-body ol{color:#d9e5f7;margin:0 0 22px 24px}
+  .article-body li{margin-bottom:8px}
+  .article-body blockquote{border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:0 0 22px;color:var(--muted);font-size:18px}
+  .article-body strong{color:var(--ink)}
+  .article-close{margin-top:52px;border:1px solid rgba(62,166,255,.4);border-radius:18px;padding:36px 40px;background:linear-gradient(135deg,rgba(62,166,255,.10),rgba(124,92,255,.08))}
+  .article-close .big{font-size:25px;font-weight:800;letter-spacing:-.3px;margin-bottom:10px}
+  .article-close p{color:var(--muted);font-size:16.5px;max-width:680px}
+  .article-close .cta{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
+  @media(max-width:640px){.article-close{padding:28px 24px}}
+  .backline{margin-top:34px;font-size:15.5px}
+  footer{padding:34px 0 46px;color:var(--muted);font-size:14px;border-top:1px solid rgba(34,52,94,.55)}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer .testmark{color:#ffb020;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;font-size:12.5px;border:1px solid rgba(255,176,32,.5);border-radius:999px;padding:4px 13px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="10" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="10" r="4.5" fill="#7c5cff"/><circle cx="38" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="38" r="4.5" fill="#7c5cff"/><circle cx="24" cy="24" r="5.5" fill="#eaf1fc"/><path d="M13 21 20 13M28 13l7 8M35 27l-7 8M20 35l-7-8M15 24h4M29 24h4M24 15v4M24 29v4" stroke="#3ea6ff" stroke-width="1.6" opacity=".8"/></svg>
+      Tech Connect<span class="ai">IT</span>
+    </div>
+    <div class="tag">An AI-First Company</div>
+    <nav>
+      <a href="index.html#what">What we do</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#proof">Proof</a>
+      <a href="articles.html" class="current" aria-current="page">Articles</a>
+      <a href="index.html#coming-soon">Coming Soon</a>
+      <a href="index.html#founder">Founder</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-head">
+  <div class="article-wrap">
+    <div class="kicker">Articles</div>
+    <h1>People Over AI</h1>
+    <p class="article-meta"><span class="byline">Frank Koziol, Founder &amp; President, Tech ConnectIT, LLC</span></p>
+  </div>
+</div>
+
+<section class="article-main">
+  <div class="article-wrap">
+    <div class="article-body">
+      <p class="lede"><em>Why the companies that put their people first will win the AI era — and the ones that lead with replacement will optimize themselves into commodities.</em></p>
+
+      <p>The defining question in boardrooms right now is how much of the workforce AI can replace. After spending weeks running my own professional life through an AI agent at full scale, I've concluded it's the wrong question — and that the executives asking it are about to learn an expensive lesson.</p>
+
+      <p>The companies that win with AI won't be the ones that chose technology over people. They'll be the ones that decided, in advance and on principle, that people come first — and then deployed AI in service of that decision. People over AI isn't a slogan. It's the only growth strategy in this era that compounds.</p>
+
+      <h2>Innovation Has A Source, And It Isn't A Model</h2>
+
+      <p>Let's start with the asset every growth strategy depends on: new ideas.</p>
+
+      <p>AI is a magnificent engine for recombining what already exists. It drafts, summarizes, analyzes and accelerates at a scale no team can match. But it does not originate. It doesn't sit with a customer and hear the problem behind the problem. It doesn't feel the itch of a market shifting. It doesn't stake a career on a non-obvious bet and then will that bet into existence.</p>
+
+      <p>People do that. Every breakthrough product, every category-defining company, started as a human conviction that looked unreasonable in a spreadsheet. A leadership team that automates away its people in the name of efficiency is quietly automating away its supply of ideas — and no amount of model capability on the market will sell that back to them.</p>
+
+      <h2>Growth Is A Trust Business</h2>
+
+      <p>Growth runs on trust: customers who renew, partners who commit, employees who stay and build. AI can scale trust — faster responses, better follow-through, more consistent delivery — but it cannot manufacture it. Trust is created by accountable human beings who know their customers, own their outcomes and show up when things go wrong.</p>
+
+      <p>This is why the replacement-first strategy is self-defeating. Announce that your people are a cost to be engineered out, and two things happen immediately. Your best employees — the ones with options — start listening to recruiters. And your remaining workforce stops surfacing the ideas and efficiencies that would have made the AI program succeed, because every improvement they offer reads as a threat to a colleague's job.</p>
+
+      <p>You cannot automate your way to growth on the backs of people who no longer believe in the company. Belief is the fuel. People over AI is how you protect it.</p>
+
+      <h2>What People Over AI Looks Like In Practice</h2>
+
+      <p>This is not an argument against AI investment. It's an argument about sequence and about where the returns go.</p>
+
+      <p><strong>Automate the work, not the worker.</strong> Strip the rules-based, high-volume tasks out of human jobs and give them to machines, where they belong. Then move the people — deliberately, with training and a visible path — into the judgment work the machines can't do: relationships, exceptions, decisions, creation.</p>
+
+      <p><strong>Share the dividend.</strong> When AI creates hours and margin, decide openly who benefits. Companies that route every gain to headcount produce one quarter of savings and years of quiet resistance. Companies that reinvest the dividend in their people — time back, better work, real advancement — become adoption machines, because it's finally in everyone's interest to make the technology succeed.</p>
+
+      <p><strong>Keep a human name on every outcome.</strong> AI cannot be accountable. It cannot be trusted, fired or believed — only used. Serious companies keep a person responsible for every consequential decision. That's not bureaucracy. That's what makes customers, regulators and employees willing to rely on you.</p>
+
+      <h2>My Own Proof</h2>
+
+      <p>I run the experiment daily. An AI agent has researched, tailored and submitted more than 150 executive job applications for me, monitors markets, manages research and remembers everything. It is, without question, the highest-leverage staff support I have ever had.</p>
+
+      <p>And the result isn't that the human became less necessary. My role concentrated into the things only a person can supply: direction, judgment, relationships and accountability. The machine got me to a hundred doors. The interviews, the references from colleagues of twenty years, the trust — that's people. The technology amplified the human. It never once substituted for one.</p>
+
+      <h2>The Bottom Line</h2>
+
+      <p>Every era tempts executives with a strategy that treats people as the problem to be optimized away. It always produces the same result: a leaner company with a smaller future.</p>
+
+      <p>AI will make strong companies stronger and hollow companies emptier, faster, in both directions. The variable is not the technology. It's whether leadership understands what the technology is for.</p>
+
+      <p>Put people over AI. Invest in the tool aggressively, and invest the returns in the humans who wield it. In a market where everyone can buy the same models, the advantage that cannot be copied is a workforce that thinks, cares and stays.</p>
+
+      <p>That's not the soft strategy. That's the growth strategy.</p>
+    </div>
+
+    <div class="article-close">
+      <div class="kicker">Work with us</div>
+      <div class="big">Putting AI to work on real infrastructure?</div>
+      <p>Tech ConnectIT is an AI-first company: AI consulting for organizations modernizing on real infrastructure, and original AI products, starting with The Voice Between Us.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="index.html#services">See our services</a>
+        <a class="btn btn-ghost" href="index.html#contact">Contact</a>
+      </div>
+    </div>
+
+    <p class="backline"><a href="articles.html">← All articles</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© 2026 Tech ConnectIT, LLC · A South Carolina LLC, organized 2018</div>
+    <div>Privacy Policy (in preparation)</div>
+  </div>
+</footer>
+</body>
+</html>

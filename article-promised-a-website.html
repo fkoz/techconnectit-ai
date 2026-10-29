@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>It Promised Me a Website by Morning — Tech ConnectIT</title>
+<meta name="description" content="The websites got built and were good — they just weren't live by morning. The reason why is the most useful lesson from a year of running a company on AI.">
+<style>
+  :root{
+    --bg:#070d1a; --bg2:#0b1526; --panel:rgba(21,34,61,.72); --line:#22345e;
+    --ink:#eaf1fc; --muted:#a3b7d9; --accent:#3ea6ff; --accent2:#7c5cff;
+    --max:1100px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid rgba(34,52,94,.7);background:rgba(7,13,26,.82);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:20px;color:var(--ink)}
+  .brand .mark{width:34px;height:34px;flex:none}
+  .brand .ai{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav .tag{color:var(--muted);font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase}
+  @media(max-width:820px){.nav .tag{display:none}}
+  .nav nav a{color:var(--muted);margin-left:20px;font-size:15px}
+  .nav nav a:hover{color:var(--ink);text-decoration:none}
+  .nav nav a.current{color:var(--ink)}
+  .kicker{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;margin-bottom:20px}
+  .btn{display:inline-block;padding:13px 28px;border-radius:999px;font-weight:650;font-size:16px}
+  .btn-primary{background:linear-gradient(92deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 8px 28px rgba(62,166,255,.35)}
+  .btn-primary:hover{text-decoration:none;filter:brightness(1.1)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(21,34,61,.5)}
+  .btn-ghost:hover{text-decoration:none;border-color:var(--accent)}
+  .article-wrap{max-width:780px;margin:0 auto;padding:0 24px}
+  .article-head{padding:72px 0 8px;background:
+    radial-gradient(900px 420px at 85% -10%,rgba(62,166,255,.18),transparent 60%),
+    radial-gradient(700px 380px at 0% 0%,rgba(124,92,255,.14),transparent 55%),var(--bg)}
+  .article-head h1{font-size:42px;line-height:1.15;font-weight:800;letter-spacing:-.5px}
+  @media(max-width:820px){.article-head h1{font-size:32px}}
+  .article-meta{color:var(--muted);font-size:15.5px;margin-top:20px}
+  .article-meta .byline{color:var(--ink);font-weight:650}
+  section.article-main{padding:44px 0 66px}
+  .article-body{font-size:17.5px}
+  .article-body p{color:#d9e5f7;margin-bottom:22px}
+  .article-body h2{font-size:27px;font-weight:750;letter-spacing:-.3px;margin:40px 0 14px}
+  .article-body h3{font-size:21px;font-weight:700;margin:32px 0 10px}
+  .article-body ul,.article-body ol{color:#d9e5f7;margin:0 0 22px 24px}
+  .article-body li{margin-bottom:8px}
+  .article-body blockquote{border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:0 0 22px;color:var(--muted);font-size:18px}
+  .article-body strong{color:var(--ink)}
+  .article-close{margin-top:52px;border:1px solid rgba(62,166,255,.4);border-radius:18px;padding:36px 40px;background:linear-gradient(135deg,rgba(62,166,255,.10),rgba(124,92,255,.08))}
+  .article-close .big{font-size:25px;font-weight:800;letter-spacing:-.3px;margin-bottom:10px}
+  .article-close p{color:var(--muted);font-size:16.5px;max-width:680px}
+  .article-close .cta{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
+  @media(max-width:640px){.article-close{padding:28px 24px}}
+  .backline{margin-top:34px;font-size:15.5px}
+  footer{padding:34px 0 46px;color:var(--muted);font-size:14px;border-top:1px solid rgba(34,52,94,.55)}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  footer .testmark{color:#ffb020;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;font-size:12.5px;border:1px solid rgba(255,176,32,.5);border-radius:999px;padding:4px 13px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="10" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="10" r="4.5" fill="#7c5cff"/><circle cx="38" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="38" r="4.5" fill="#7c5cff"/><circle cx="24" cy="24" r="5.5" fill="#eaf1fc"/><path d="M13 21 20 13M28 13l7 8M35 27l-7 8M20 35l-7-8M15 24h4M29 24h4M24 15v4M24 29v4" stroke="#3ea6ff" stroke-width="1.6" opacity=".8"/></svg>
+      Tech Connect<span class="ai">IT</span>
+    </div>
+    <div class="tag">An AI-First Company</div>
+    <nav>
+      <a href="index.html#what">What we do</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#proof">Proof</a>
+      <a href="articles.html" class="current" aria-current="page">Articles</a>
+      <a href="index.html#coming-soon">Coming Soon</a>
+      <a href="index.html#founder">Founder</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-head">
+  <div class="article-wrap">
+    <div class="kicker">Articles</div>
+    <h1>It Promised Me a Website by Morning</h1>
+    <p class="article-meta"><span class="byline">Frank Koziol, Founder &amp; President, Tech ConnectIT, LLC</span></p>
+  </div>
+</div>
+
+<section class="article-main">
+  <div class="article-wrap">
+    <div class="article-body">
+      <p>A working website is not a moonshot. It is two static pages — text, a logo, a picture. Businesses have been putting them up in an afternoon for twenty-five years. So when I told my AI agent "build the websites and have them live," I expected the easiest deliverable on our entire list.</p>
+
+      <p>The websites got built. They are good — I have read every line. They were not live by morning. They were not live the next morning either. And the reason why is the most useful lesson I have learned in a year of running my company on AI, so I am sharing it the way it happened.</p>
+
+      <p>The build was never the problem. The problem was the last mile: the sites needed a hosting account, the hosting account needed a sign-up, the sign-up hit an identity step, and that step sat in a queue overnight — known, logged, and not escalated to me when I asked, point blank, "do you need anything from me before I go to bed?" I got a clean status. What I needed was the one blocker, up front, while I was still awake to clear it in ninety seconds.</p>
+
+      <p>Then came the registrar — the site where my domains live — whose login flatly refuses to let my agent's browser in. Every door we tried: password, email link, sign-in with Google. Same wall. My agent can run a hundred job applications, bank reconciliations, and a research program in three languages, and it cannot log into the one site that holds the keys to my own domains. I ended up entering DNS records by hand, field by field, with the AI reading me values over chat like it was 1997.</p>
+
+      <p>I am not writing this to complain about the tool. I am writing it because every executive I talk to is being sold the same story — that AI delivers outcomes. It does not. AI delivers <em>work</em>. Outcomes live on the critical path, and the critical path is still made of logins, verifications, payment steps, and one human being asked at the right moment instead of the wrong one.</p>
+
+      <p>Here is what changed in my operation:</p>
+
+      <p><strong>Critical path, every day.</strong> We now run the business on the Critical Path Method — the same discipline I used on aircraft programs. Dependencies mapped, the zero-float chain identified, and any blocker on that chain is the headline the moment it is known. Not in the morning report. The moment it is known.</p>
+
+      <p><strong>Gates surface before logoff, not after.</strong> Every step that only a human can do — a sign-in, an approval, a card — gets put in front of me in a batch before I sign off for the night, screens open. Nothing critical is allowed to wait on a sleeping man.</p>
+
+      <p><strong>Never pick a tool the team cannot use.</strong> The registrar was my agent's own recommendation. A supplier your own staff cannot work with is not a supplier; it is a future outage with a logo. Compatibility is now checked before anything is purchased, not discovered after.</p>
+
+      <p><strong>A promise gets a plan, or it is not a promise.</strong> "Live by morning" now means: the path is walked, the gates are named, and the finish line is verified — or the date does not get said out loud.</p>
+
+      <p>The websites will be live. The business is real, the product is coming, and I would still bet on this way of working over any other available to a founder my size. But let me retire a myth while I am at it: the AI did not fail because it is weak. It failed at the exact places every program I ever ran failed — an unmanaged dependency and a risk nobody escalated.</p>
+
+      <p>That was true in aerospace. It is true with AI. The technology changes. Program management does not.</p>
+    </div>
+
+    <div class="article-close">
+      <div class="kicker">Work with us</div>
+      <div class="big">Putting AI to work on real infrastructure?</div>
+      <p>Tech ConnectIT is an AI-first company: AI consulting for organizations modernizing on real infrastructure, and original AI products, starting with The Voice Between Us.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="index.html#services">See our services</a>
+        <a class="btn btn-ghost" href="index.html#contact">Contact</a>
+      </div>
+    </div>
+
+    <p class="backline"><a href="articles.html">← All articles</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© 2026 Tech ConnectIT, LLC · A South Carolina LLC, organized 2018</div>
+    <div>Privacy Policy (in preparation)</div>
+  </div>
+</footer>
+</body>
+</html>
