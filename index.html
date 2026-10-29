@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech ConnectIT — An AI-First Company</title>
+<meta name="description" content="Tech ConnectIT is an AI-first company founded on 30+ years of enterprise infrastructure. AI consulting and original AI products, starting with The Voice Between Us.">
+<style>
+  :root{
+    --bg:#070d1a; --bg2:#0b1526; --panel:rgba(21,34,61,.72); --line:#22345e;
+    --ink:#eaf1fc; --muted:#a3b7d9; --accent:#3ea6ff; --accent2:#7c5cff;
+    --max:1100px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid rgba(34,52,94,.7);background:rgba(7,13,26,.82);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:20px;color:var(--ink)}
+  .brand .mark{width:34px;height:34px;flex:none}
+  .brand .ai{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav .tag{color:var(--muted);font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase}
+  @media(max-width:820px){.nav .tag{display:none}}
+  .nav nav a{color:var(--muted);margin-left:20px;font-size:15px}
+  .nav nav a:hover{color:var(--ink);text-decoration:none}
+  .hero{padding:84px 0 0;background:
+    radial-gradient(900px 420px at 85% -10%,rgba(62,166,255,.18),transparent 60%),
+    radial-gradient(700px 380px at 0% 0%,rgba(124,92,255,.14),transparent 55%),var(--bg)}
+  .kicker{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;margin-bottom:20px}
+  h1{font-size:54px;line-height:1.1;font-weight:800;letter-spacing:-.6px;max-width:820px}
+  h1 .grad{background:linear-gradient(92deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--muted);font-size:19px;max-width:780px;margin-top:24px}
+  .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 28px;border-radius:999px;font-weight:650;font-size:16px}
+  .btn-primary{background:linear-gradient(92deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 8px 28px rgba(62,166,255,.35)}
+  .btn-primary:hover{text-decoration:none;filter:brightness(1.1)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(21,34,61,.5)}
+  .btn-ghost:hover{text-decoration:none;border-color:var(--accent)}
+  .hero-art{margin:52px auto 0;max-width:var(--max);padding:0 24px}
+  .hero-art .frame{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(62,166,255,.08),0 0 90px rgba(62,166,255,.12)}
+  .hero-art img{display:block;width:100%;height:auto}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:44px 0 8px}
+  @media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:38px}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+  .stat .n{font-size:30px;font-weight:800;background:linear-gradient(92deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .l{color:var(--muted);font-size:13.5px;margin-top:4px;letter-spacing:.4px}
+  section{padding:66px 0;border-top:1px solid rgba(34,52,94,.55)}
+  h2{font-size:31px;font-weight:750;margin-bottom:14px;letter-spacing:-.3px}
+  .sub{color:var(--muted);max-width:760px;margin-bottom:34px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .card:hover{transform:translateY(-4px);border-color:rgba(62,166,255,.55);box-shadow:0 18px 44px rgba(0,0,0,.45),0 0 40px rgba(62,166,255,.10)}
+  .card h3{font-size:21px;margin-bottom:10px}
+  .card .pill{display:inline-block;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:3px 11px;margin-bottom:14px;background:rgba(62,166,255,.07)}
+  .card p{color:var(--muted);font-size:16px}
+  .svc-head{max-width:840px;margin-bottom:36px}
+  .svc-head .big{font-size:27px;font-weight:750;letter-spacing:-.3px;line-height:1.25}
+  .svc-head .pay{font-size:20px;color:var(--accent);font-weight:650;margin-top:8px}
+  .svc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 28px;transition:border-color .25s ease,box-shadow .25s ease}
+  .svc:hover{border-color:rgba(62,166,255,.55);box-shadow:0 14px 36px rgba(0,0,0,.4)}
+  .svc h3{font-size:18.5px;margin-bottom:8px}
+  .svc p{color:var(--muted);font-size:15.5px}
+  .guarantee{border:1px solid rgba(62,166,255,.4);border-radius:18px;padding:40px 44px;background:linear-gradient(135deg,rgba(62,166,255,.10),rgba(124,92,255,.08))}
+  .guarantee .big{font-size:28px;font-weight:800;letter-spacing:-.3px;margin-bottom:12px}
+  .guarantee p{color:var(--muted);font-size:17px;max-width:840px}
+  .sheet{border:1px solid var(--line);border-radius:18px;padding:40px 44px;background:var(--panel);margin-bottom:22px}
+  .sheet:last-child{margin-bottom:0}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0b1526;background:linear-gradient(92deg,var(--accent),var(--accent2));border-radius:999px;padding:4px 13px;margin-bottom:16px}
+  .sheet h3{font-size:25px;font-weight:750;margin-bottom:10px;letter-spacing:-.3px}
+  .sheet .lead{font-size:18px;color:var(--ink);max-width:840px}
+  .sheet p{color:var(--muted);font-size:16px;max-width:840px;margin-top:12px}
+  .sheet ul{list-style:none;margin-top:14px;max-width:840px}
+  .sheet li{color:var(--muted);font-size:16px;padding:9px 0;border-bottom:1px solid rgba(34,52,94,.55)}
+  .sheet li:last-child{border-bottom:none}
+  .sheet li strong{color:var(--ink)}
+  @media(max-width:640px){.guarantee,.sheet{padding:30px 24px}}
+  .proof{list-style:none}
+  .proof li{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid rgba(34,52,94,.55);color:var(--muted);font-size:16.5px}
+  .proof li:last-child{border-bottom:none}
+  .proof .chk{flex:none;width:26px;height:26px;margin-top:2px}
+  .proof strong{color:var(--ink)}
+  .manifesto{position:relative;border-radius:18px;padding:44px;background:linear-gradient(135deg,rgba(62,166,255,.12),rgba(124,92,255,.12));border:1px solid rgba(62,166,255,.35);box-shadow:0 0 70px rgba(124,92,255,.12) inset,0 24px 60px rgba(0,0,0,.4)}
+  .manifesto h2{font-size:35px}
+  .manifesto p{color:var(--muted);max-width:840px;font-size:17px}
+  .founder{display:grid;grid-template-columns:118px 1fr;gap:28px;align-items:start}
+  @media(max-width:640px){.founder{grid-template-columns:1fr}}
+  .monogram{width:112px;height:112px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:39px;font-weight:800;color:#fff;box-shadow:0 14px 36px rgba(62,166,255,.35)}
+  .founder p{color:var(--muted);font-size:16.5px}
+  .contact{background:linear-gradient(180deg,var(--bg2),rgba(21,34,61,.6));border:1px solid var(--line);border-radius:16px;padding:38px;text-align:center}
+  .contact .mail{font-size:23px;font-weight:650}
+  footer{padding:34px 0 46px;color:var(--muted);font-size:14px;border-top:1px solid rgba(34,52,94,.55)}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="10" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="10" r="4.5" fill="#7c5cff"/><circle cx="38" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="38" r="4.5" fill="#7c5cff"/><circle cx="24" cy="24" r="5.5" fill="#eaf1fc"/><path d="M13 21 20 13M28 13l7 8M35 27l-7 8M20 35l-7-8M15 24h4M29 24h4M24 15v4M24 29v4" stroke="#3ea6ff" stroke-width="1.6" opacity=".8"/></svg>
+      Tech Connect<span class="ai">IT</span>
+    </div>
+    <div class="tag">An AI-First Company</div>
+    <nav>
+      <a href="#what">What we do</a>
+      <a href="#services">Services</a>
+      <a href="#proof">Proof</a>
+      <a href="articles.html">Articles</a>
+      <a href="#coming-soon">Coming Soon</a>
+      <a href="#founder">Founder</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="kicker">AI Consulting · AI Products</div>
+    <h1>We built the networks.<br>Now we build <span class="grad">what runs on them.</span></h1>
+    <p>Tech ConnectIT is an AI-first company founded on 30+ years of enterprise infrastructure — networks, cloud, and data centers for Fortune 500 operations. Relaunched in February 2025 in the AI lane: AI consulting for organizations modernizing on real infrastructure, and original AI products, starting with The Voice Between Us.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="mailto:frank@techconnectit.ai">Work with us</a>
+      <a class="btn btn-ghost" href="https://thevoicebetweenus.com">Meet our first product →</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="n">30+</div><div class="l">Years of enterprise infrastructure</div></div>
+      <div class="stat"><div class="n">3</div><div class="l">Cloud giants pitched head-to-head — Microsoft, Google, Amazon</div></div>
+      <div class="stat"><div class="n">100%</div><div class="l">Of the Bella Blue build funded by Microsoft</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">Founder — running the whole company on AI</div></div>
+    </div>
+  </div>
+  <div class="hero-art">
+    <div class="frame"><img src="assets/hero-constellation.webp" alt="A constellation of connected nodes — the network, lit up"></div>
+  </div>
+</div>
+
+<section id="what">
+  <div class="wrap">
+    <h2>What we do</h2>
+    <p class="sub">Two arms, one foundation: three decades of building the infrastructure AI has to stand on.</p>
+    <div class="grid2">
+      <div class="card">
+        <h3><span class="pill">Arm One</span><br>AI Consulting</h3>
+        <p>Practical AI adoption for organizations whose infrastructure has to carry it: AI readiness and architecture, data and cloud foundations, vendor and platform selection, and the process redesign that makes AI stick. Led by a founder who has pitched Microsoft, Google, and Amazon head-to-head — and been funded by them.</p>
+      </div>
+      <div class="card">
+        <h3><span class="pill">Arm Two</span><br>Products</h3>
+        <p><strong style="color:var(--ink)">The Voice Between Us</strong> — a voice-first AI relationship platform, now in development. No photos, no profiles — an AI matchmaker who knows you by your voice, and introduces you the same way.</p>
+        <p style="margin-top:12px"><a href="https://thevoicebetweenus.com">Visit thevoicebetweenus.com →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="kicker">Services</div>
+    <div class="svc-head">
+      <div class="big">Process automation through the use of AI</div>
+      <div class="pay">Achieving greater value through your AI investment</div>
+    </div>
+    <div class="grid2">
+      <div class="svc">
+        <h3>AI Strategy &amp; Adoption</h3>
+        <p>AI readiness assessment, use-case selection, and adoption roadmaps for organizations whose infrastructure has to carry the change.</p>
+      </div>
+      <div class="svc">
+        <h3>Data Analytics &amp; Predictive Analytics</h3>
+        <p>Analytics platforms and predictive models that run in production, not in slide decks: Bella Blue, the quality-based predictive analytics application the founder originated for Boeing Global Services, is still in production today.</p>
+      </div>
+      <div class="svc">
+        <h3>AI Architecture &amp; Vendor-Funded Builds</h3>
+        <p>Platform evaluation and selection across Microsoft, Azure, Google Cloud, and AWS, including structuring vendor credit and partner-funded build programs. The Bella Blue engagement is the pattern: the founder pitched all three hyperscalers head-to-head and Microsoft funded the build in full.</p>
+      </div>
+      <div class="svc">
+        <h3>Cloud &amp; Data Center Infrastructure</h3>
+        <p>Architecture, migration, and consolidation of enterprise infrastructure — five data-center moves led, global networks designed and operated.</p>
+      </div>
+      <div class="svc">
+        <h3>Network &amp; Security Architecture</h3>
+        <p>Enterprise WAN/LAN design and security architecture at Fortune 500 scale, led by a CISSP and former Director of Network &amp; Security Architecture.</p>
+      </div>
+      <div class="svc">
+        <h3>Program &amp; Project Management</h3>
+        <p>End-to-end delivery of large technology programs; the founder ran Boeing's project management group in his last senior-manager role.</p>
+      </div>
+      <div class="svc">
+        <h3>Process Optimization &amp; Quality Systems</h3>
+        <p>Workflow and process redesign as the core discipline: 128 Safety &amp; Quality systems brought to Green at Boeing; systems thinking applied to operations that have to hold under audit.</p>
+      </div>
+      <div class="svc">
+        <h3>NOC &amp; IT Operations Build-Out</h3>
+        <p>Design, build, and operation of network operations centers and managed infrastructure teams — a NOC built and run, teams of up to 45 staff.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="engage">
+  <div class="wrap">
+    <div class="guarantee">
+      <div class="kicker">How we engage</div>
+      <div class="big">Proof, or you don't pay.</div>
+      <p>Every consulting engagement starts with a fixed-scope assessment: we baseline your current costs, document where the savings are, and agree the measurement with you in writing before any build begins. If we can't prove the savings, the assessment costs you nothing.</p>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="wrap">
+    <h2>Proof</h2>
+    <ul class="proof">
+      <li><svg class="chk" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="#3ea6ff" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#3ea6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Originated <strong>Bella Blue</strong>, a quality-based predictive analytics application for Boeing Global Services — personally pitched to Microsoft, Google, and Amazon; Microsoft funded the build in full (cloud credits, consultants, program management). <strong>Still in production today.</strong></span></li>
+      <li><svg class="chk" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="#3ea6ff" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#3ea6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Helped lead <strong>Connected Aircraft</strong>, Boeing's real-time cloud-native avionic telemetry platform, procured by Jeppesen.</span></li>
+      <li><svg class="chk" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" stroke="#3ea6ff" stroke-width="1.6"/><path d="M7.5 12.5l3 3 6-6.5" stroke="#3ea6ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ran enterprise network and security operations at Fortune 500 scale — data centers, global WANs, a NOC built and run — across <strong>Boeing, Fujitsu/AT&amp;T, Netigy, and Dun &amp; Bradstreet</strong>.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="articles">
+  <div class="wrap">
+    <div class="kicker">Articles</div>
+    <h2>Articles — what we're writing</h2>
+    <p class="sub">Full-length pieces on AI adoption, the infrastructure it stands on, and building an AI-first company — published here in full. Our LinkedIn posts carry the short version and point to the complete article.</p>
+    <a class="btn btn-ghost" href="articles.html">Read the articles →</a>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="manifesto">
+      <div class="kicker">How we operate</div>
+      <h2>One founder. One couch. An entire company run on AI.</h2>
+      <p>Tech ConnectIT doesn't just advise on AI — it operates on it. Strategy, research, design, engineering direction, and daily operations run on AI end to end, with a handful of human specialists where the law and safety require them. This relaunch is the demonstration: the company, its product, and its funding pursuit were built exactly the way we help clients work.</p>
+    </div>
+  </div>
+</section>
+
+<section id="coming-soon">
+  <div class="wrap">
+    <h2>Coming soon</h2>
+    <p class="sub">Three practices now in build-out. Each one grows out of the work above — and each one opens to a first set of clients as it launches.</p>
+
+    <div class="sheet">
+      <span class="badge">Coming Soon</span>
+      <h3>AI Team Insertion</h3>
+      <p class="lead">An AI-ready specialist embedded in your business for 4 to 6 weeks — improving your processes, your tools, and your people from the inside, and building an AI-ready staff while they're there.</p>
+      <p>Your team doesn't sit through a presentation about AI. They work alongside someone who does this every day, on your real processes and your real tools — and they come out of the placement able to run it themselves.</p>
+      <ul>
+        <li><strong>Embedded where you want them</strong> — placed in the part of the business you want improved: the process, the tooling, and the people who run both.</li>
+        <li><strong>Your staff, built up</strong> — the placement is designed to leave an AI-ready team behind, not a dependency.</li>
+        <li><strong>Funded through our platform partners</strong> — placements are funded through our platform partners and run on the partner's stack, the same vendor-funded pattern behind the Bella Blue build.</li>
+      </ul>
+    </div>
+
+    <div class="sheet">
+      <span class="badge">Coming Soon</span>
+      <h3>Agentic AI for Business</h3>
+      <p class="lead">AI agents designed and deployed on the platforms you already run — ServiceNow, Salesforce, Workday, LivePerson, and SoundHound AI. No rip-and-replace: agents on your existing stack.</p>
+      <p>Your business already runs on these platforms. We design, deploy, and run agents on top of them — at the architecture and program level, integrated into the systems your teams already operate, under your governance.</p>
+      <ul>
+        <li><strong>ServiceNow</strong> — workflow and IT service management agents.</li>
+        <li><strong>Salesforce</strong> — CRM and customer agents.</li>
+        <li><strong>Workday</strong> — HR and finance agents.</li>
+        <li><strong>LivePerson</strong> — conversational AI and customer engagement.</li>
+        <li><strong>SoundHound AI</strong> — voice AI.</li>
+      </ul>
+      <p>Tech ConnectIT runs on this same agent architecture end to end — order processing to execution, accounts receivable to accounts payable. The practice sells what the company runs on.</p>
+    </div>
+
+    <div class="sheet">
+      <span class="badge">Coming Soon</span>
+      <h3>AI Security</h3>
+      <p class="lead">An audit of where AI leaves your company vulnerable — including the shadow AI already inside it — plus the watch tooling to keep it covered, implemented for you.</p>
+      <p>Data leakage and exfiltration through AI tools is happening now: employees pasting proprietary data, code, and documents into AI services is uncontrolled disclosure. The assessment makes that invisible flow visible — measured, named, and owned. It is anchored to the NIST AI Risk Management Framework, with the OWASP Top 10 for LLM Applications, MITRE ATLAS, and ISO/IEC 42001 mapping.</p>
+      <ul>
+        <li><strong>Assess</strong> — a fixed-scope, NIST-anchored AI Vulnerability Assessment: where your AI adoption exposes you, and where AI is being aimed at you.</li>
+        <li><strong>Watch</strong> — the shadow-AI discovery and monitoring tooling deployed and configured inside your environment, so the visibility stays on as a standing control.</li>
+      </ul>
+      <p>As the practice matures, the audit grows into a full service line: <strong style="color:var(--ink)">AI Footprint Visibility</strong>, <strong style="color:var(--ink)">AI Red Team Engagement</strong>, <strong style="color:var(--ink)">Frontier AI Readiness Review</strong>, a <strong style="color:var(--ink)">Managed AI Security Program</strong>, and <strong style="color:var(--ink)">Remote Monitoring &amp; Remote Response</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="founder">
+  <div class="wrap">
+    <h2>About the founder</h2>
+    <div class="founder">
+      <div class="monogram">FK</div>
+      <div>
+        <p><strong style="color:var(--ink)">Frank Koziol</strong> — Founder &amp; President, Tech ConnectIT, LLC. Senior technology leadership at Boeing (Data Analytics/AI, Infrastructure, Quality), director-level roles in telecom, and the original Tech ConnectIT consulting practice (2005–2019), relaunched in February 2025 as an AI-first company. CISSP. MS Computer Information Science, BS Finance, La Salle University.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact">
+      <div class="kicker">Contact</div>
+      <div class="mail"><a href="mailto:frank@techconnectit.ai">frank@techconnectit.ai</a></div>
+      <p style="color:var(--muted);margin-top:8px">Creedmoor, North Carolina</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© 2026 Tech ConnectIT, LLC · A South Carolina LLC, organized 2018</div>
+    <div>Privacy Policy (in preparation)</div>
+  </div>
+</footer>
+</body>
+</html>

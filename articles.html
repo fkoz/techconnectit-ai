@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles — Tech ConnectIT</title>
+<meta name="description" content="Articles from Tech ConnectIT, an AI-first company: full-length pieces on AI adoption, infrastructure, and building an AI-first company. LinkedIn posts point to the full articles here.">
+<style>
+  :root{
+    --bg:#070d1a; --bg2:#0b1526; --panel:rgba(21,34,61,.72); --line:#22345e;
+    --ink:#eaf1fc; --muted:#a3b7d9; --accent:#3ea6ff; --accent2:#7c5cff;
+    --max:1100px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid rgba(34,52,94,.7);background:rgba(7,13,26,.82);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:20px;color:var(--ink)}
+  .brand .mark{width:34px;height:34px;flex:none}
+  .brand .ai{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav .tag{color:var(--muted);font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase}
+  @media(max-width:820px){.nav .tag{display:none}}
+  .nav nav a{color:var(--muted);margin-left:20px;font-size:15px}
+  .nav nav a:hover{color:var(--ink);text-decoration:none}
+  .nav nav a.current{color:var(--ink)}
+  .kicker{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;margin-bottom:20px}
+  h1{font-size:44px;line-height:1.12;font-weight:800;letter-spacing:-.6px;max-width:820px}
+  @media(max-width:820px){h1{font-size:34px}}
+  h2{font-size:31px;font-weight:750;margin-bottom:14px;letter-spacing:-.3px}
+  .btn{display:inline-block;padding:13px 28px;border-radius:999px;font-weight:650;font-size:16px}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(21,34,61,.5)}
+  .btn-ghost:hover{text-decoration:none;border-color:var(--accent)}
+  .page-head{padding:72px 0 10px;background:
+    radial-gradient(900px 420px at 85% -10%,rgba(62,166,255,.18),transparent 60%),
+    radial-gradient(700px 380px at 0% 0%,rgba(124,92,255,.14),transparent 55%),var(--bg)}
+  .page-head p{color:var(--muted);font-size:19px;max-width:780px;margin-top:20px}
+  section{padding:66px 0;border-top:1px solid rgba(34,52,94,.55)}
+  .sub{color:var(--muted);max-width:760px;margin-bottom:34px}
+  .article-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.article-grid{grid-template-columns:1fr}}
+  .article-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .article-card:hover{transform:translateY(-4px);border-color:rgba(62,166,255,.55);box-shadow:0 18px 44px rgba(0,0,0,.45),0 0 40px rgba(62,166,255,.10)}
+  .article-card .date{color:var(--accent);font-size:12.5px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:12px}
+  .article-card h3{font-size:21px;margin-bottom:10px;line-height:1.3}
+  .article-card h3 a{color:var(--ink)}
+  .article-card h3 a:hover{color:var(--accent);text-decoration:none}
+  .article-card p{color:var(--muted);font-size:16px;margin-bottom:18px}
+  .article-card .read{font-weight:650;font-size:15.5px}
+  .status-note{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:34px 36px;color:var(--muted);font-size:17px;max-width:840px}
+  .status-note strong{color:var(--ink)}
+  footer{padding:34px 0 46px;color:var(--muted);font-size:14px;border-top:1px solid rgba(34,52,94,.55)}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="10" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="10" r="4.5" fill="#7c5cff"/><circle cx="38" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="38" r="4.5" fill="#7c5cff"/><circle cx="24" cy="24" r="5.5" fill="#eaf1fc"/><path d="M13 21 20 13M28 13l7 8M35 27l-7 8M20 35l-7-8M15 24h4M29 24h4M24 15v4M24 29v4" stroke="#3ea6ff" stroke-width="1.6" opacity=".8"/></svg>
+      Tech Connect<span class="ai">IT</span>
+    </div>
+    <div class="tag">An AI-First Company</div>
+    <nav>
+      <a href="index.html#what">What we do</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#proof">Proof</a>
+      <a href="articles.html" class="current" aria-current="page">Articles</a>
+      <a href="index.html#coming-soon">Coming Soon</a>
+      <a href="index.html#founder">Founder</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="page-head">
+  <div class="wrap">
+    <div class="kicker">Articles</div>
+    <h1>What we're writing, in full.</h1>
+    <p>Full-length pieces from Tech ConnectIT on AI adoption, the infrastructure it stands on, and building an AI-first company. Our LinkedIn posts carry the short version — the complete article always lives here.</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <!--
+      HOW TO PUBLISH AN ARTICLE
+      1. Copy articles/article-template.html to articles/<article-slug>.html and fill in its slots.
+      2. Add one card per published article inside .article-grid below, newest first:
+
+      <article class="article-card">
+        <div class="date">Month D, YYYY</div>
+        <h3><a href="articles/<article-slug>.html">Article title</a></h3>
+        <p>One- or two-sentence summary of the article.</p>
+        <a class="read" href="articles/<article-slug>.html">Read the full article →</a>
+      </article>
+
+      3. Remove the .status-note block once the first article is published.
+    -->
+    <div class="article-grid" aria-label="Published articles">
+      <!-- Published article cards go here, newest first. None published yet. -->
+    </div>
+
+    <div class="status-note">
+      <strong>The first articles are in preparation.</strong> When they are published, each one will appear here in full — and our LinkedIn posts will point to the complete piece on this page.
+    </div>
+
+    <p style="margin-top:36px"><a class="btn btn-ghost" href="index.html#services">See what we do →</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© 2026 Tech ConnectIT, LLC · A South Carolina LLC, organized 2018</div>
+    <div>Privacy Policy (in preparation)</div>
+  </div>
+</footer>
+</body>
+</html>
