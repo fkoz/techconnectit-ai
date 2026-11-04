@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Toyota Way for Production AI — Tech ConnectIT</title>
+<meta name="description" content="By Frank Koziol, Tech ConnectIT, LLC — October 30, 2026">
+<style>
+  :root{
+    --bg:#070d1a; --bg2:#0b1526; --panel:rgba(21,34,61,.72); --line:#22345e;
+    --ink:#eaf1fc; --muted:#a3b7d9; --accent:#3ea6ff; --accent2:#7c5cff;
+    --max:1100px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid rgba(34,52,94,.7);background:rgba(7,13,26,.82);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:20px;color:var(--ink)}
+  .brand .mark{width:34px;height:34px;flex:none}
+  .brand .ai{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav .tag{color:var(--muted);font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase}
+  @media(max-width:820px){.nav .tag{display:none}}
+  .nav nav a{color:var(--muted);margin-left:20px;font-size:15px}
+  .nav nav a:hover{color:var(--ink);text-decoration:none}
+  .nav nav a.current{color:var(--ink)}
+  .kicker{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;margin-bottom:20px}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0b1526;background:linear-gradient(92deg,var(--accent),var(--accent2));border-radius:999px;padding:4px 13px;margin-bottom:16px}
+  .btn{display:inline-block;padding:13px 28px;border-radius:999px;font-weight:650;font-size:16px}
+  .btn-primary{background:linear-gradient(92deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 8px 28px rgba(62,166,255,.35)}
+  .btn-primary:hover{text-decoration:none;filter:brightness(1.1)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(21,34,61,.5)}
+  .btn-ghost:hover{text-decoration:none;border-color:var(--accent)}
+  .article-wrap{max-width:780px;margin:0 auto;padding:0 24px}
+  .article-head{padding:72px 0 8px;background:
+    radial-gradient(900px 420px at 85% -10%,rgba(62,166,255,.18),transparent 60%),
+    radial-gradient(700px 380px at 0% 0%,rgba(124,92,255,.14),transparent 55%),var(--bg)}
+  .article-head h1{font-size:42px;line-height:1.15;font-weight:800;letter-spacing:-.5px}
+  @media(max-width:820px){.article-head h1{font-size:32px}}
+  .article-meta{color:var(--muted);font-size:15.5px;margin-top:20px}
+  .article-meta .byline{color:var(--ink);font-weight:650}
+  section.article-main{padding:44px 0 66px}
+  .article-body{font-size:17.5px}
+  .article-body p{color:#d9e5f7;margin-bottom:22px}
+  .article-body p.lede{font-size:19px;color:var(--muted)}
+  .article-body h2{font-size:27px;font-weight:750;letter-spacing:-.3px;margin:40px 0 14px}
+  .article-body h3{font-size:21px;font-weight:700;margin:32px 0 10px}
+  .article-body ul,.article-body ol{color:#d9e5f7;margin:0 0 22px 24px}
+  .article-body li{margin-bottom:8px}
+  .article-body blockquote{border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:0 0 22px;color:var(--muted);font-size:18px}
+  .article-body strong{color:var(--ink)}
+  .placeholder{border:1px dashed var(--line);border-radius:12px;padding:22px 24px;color:var(--muted);background:rgba(21,34,61,.4)}
+  .article-close{margin-top:52px;border:1px solid rgba(62,166,255,.4);border-radius:18px;padding:36px 40px;background:linear-gradient(135deg,rgba(62,166,255,.10),rgba(124,92,255,.08))}
+  .article-close .big{font-size:25px;font-weight:800;letter-spacing:-.3px;margin-bottom:10px}
+  .article-close p{color:var(--muted);font-size:16.5px;max-width:680px}
+  .article-close .cta{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
+  @media(max-width:640px){.article-close{padding:28px 24px}}
+  .backline{margin-top:34px;font-size:15.5px}
+  footer{padding:34px 0 46px;color:var(--muted);font-size:14px;border-top:1px solid rgba(34,52,94,.55)}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="10" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="10" r="4.5" fill="#7c5cff"/><circle cx="38" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="38" r="4.5" fill="#7c5cff"/><circle cx="24" cy="24" r="5.5" fill="#eaf1fc"/><path d="M13 21 20 13M28 13l7 8M35 27l-7 8M20 35l-7-8M15 24h4M29 24h4M24 15v4M24 29v4" stroke="#3ea6ff" stroke-width="1.6" opacity=".8"/></svg>
+      Tech Connect<span class="ai">IT</span>
+    </div>
+    <div class="tag">An AI-First Company</div>
+    <nav>
+      <a href="index.html#what">What we do</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#proof">Proof</a>
+      <a href="articles.html" class="current" aria-current="page">Articles</a>
+      <a href="index.html#coming-soon">Coming Soon</a>
+      <a href="index.html#founder">Founder</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-head">
+  <div class="article-wrap">
+    <div class="kicker">Articles</div>
+        <h1>The Toyota Way for Production AI</h1>
+        <p class="article-meta"><span class="byline">Frank Koziol, Founder &amp; President, Tech ConnectIT, LLC</span><br>October 30, 2026</p>
+  </div>
+</div>
+
+<section class="article-main">
+  <div class="article-wrap">
+        <div class="article-body">
+      <p class="lede"><em>By Frank Koziol, Tech ConnectIT, LLC — October 30, 2026</em></p>
+
+<p><strong>DRAFT — for Frank's review, not for publication</strong></p>
+<p>Most companies experimenting with AI are running a workshop. A few clever people, a pile of prompts, output judged by whether it looks impressive in a demo. That is not production. Production is what happens when the output has to be right every day, at a cost you can defend, for a customer who will notice when it isn't.</p>
+<p>We run an AI-first company, and we made a decision early: if agents are going to do real work, they will do it on a production line, with production discipline. The best operating system ever built for that discipline is not from Silicon Valley. It is from Toyota. Jeffrey Liker's <em>The Toyota Way</em> organises Toyota's philosophy into fourteen principles across four themes — Philosophy, Process, People and Partners, and Problem Solving — resting on the two pillars of the Toyota Production System: just-in-time and jidoka, built-in quality. Swap steel for tokens and assembly stations for agents, and it maps onto production AI almost without translation. Here is how it runs in our shop.</p>
+<h2>The line</h2>
+<p>Our line has stations, like any other. Work is built at one station, independently reviewed at the next, passes a human gate where judgment is required, and is released only when it clears. The line has a takt time — the rate it is allowed to run — and in our plant that rate is set by a token budget, because tokens are our raw material. Every station has standard work — and anyone can stop the line. That last part matters most.</p>
+<h2>Jidoka: the line stops itself</h2>
+<p>Jidoka means building quality into the process so a defect stops production instead of travelling downstream. On a Toyota line, a worker pulls the andon cord. On ours, the cord pulls itself. When our weekly token allowance reaches 10 million tokens remaining, everything stops automatically — every scheduled job disabled, every run halted — and only a human can restart it. That is not a metaphor. The pause fired on October 29, 2026, and 34 scheduled jobs stopped with it. We also run a two-strikes rule: any process that fails twice in a row stops and waits for a person. It does not retry a third time and hope. A line that cannot stop will eventually ship its worst day.</p>
+<h2>Quality at the source</h2>
+<p>Nothing leaves our shop that has failed an independent-reader process check — a reviewer who did not build the work checks it for completeness, correctness, and fit to the requirement before it goes out. On top of that, one in five finished pieces is sampled to the founder for surveillance, the way a plant manager walks the floor and pulls parts off the line. The first live catch came on October 30, 2026: two defects in a résumé, found at review and fixed before submission. In quality economics that is a stage-10 cost. The same defects found by the customer are a stage-100 cost. We would rather pay in dimes than in hundreds.</p>
+<h2>Heijunka: level the load</h2>
+<p>Toyota levels production — heijunka — because unevenness, mura, is itself a cost: it creates overburden, hides defects, and guarantees a crisis at the end of the schedule. We learned this the expensive way. In the week of October 23–29, before we levelled our load, we burned through roughly 99 per cent of a 500-million-token weekly allowance, ending the week hard against the limit. Now the burn runs under daily caps, spread across the week like the tortoise, not the hare. The work did not get slower. The surprises stopped.</p>
+<h2>Pull, not push</h2>
+<p>Just-in-time means making only what is needed, when it is needed, in the amount needed — work pulled by real demand rather than pushed out in batches. Our demand signal is the critical path: we run the day by Critical Path Method, so the next job on the line is the one a real deadline is waiting on. Context is assembled just in time, tokens are spent when the work is called for, and we do not hoard inventory — no stockpiles of drafts or speculative runs ageing on a shelf.</p>
+<h2>Standardised work — and a warning</h2>
+<p>Standardised work is the foundation everything else stands on: brand standards, standing answers, master templates, the same inputs producing the same quality at every station. A defect in the standard does not produce one bad unit — it produces the defect at scale, in every unit, until somebody fixes the standard. We found two truncated date cells in our master résumé template. They had flowed quietly into build after build. The countermeasure was not fixing one résumé; it was flagging the standard itself for correction. When your line is made of software, a bad template is a bad die, and it stamps every part.</p>
+<h2>Visual management</h2>
+<p>A Toyota floor is readable at a glance: boards, signals, and status anyone can see, so no problem stays hidden. Ours is the same discipline in digital form. One applications ledger is the single source of truth for every submission — if it is not in the ledger, it did not happen. A quality tracker tags every defect by the stage where it was caught — 1, 10, or 100 — so the state of quality is a number you can read, not a feeling you argue about. If the state of the line can't be read from one screen, the line isn't managed; it's merely running.</p>
+<h2>Genchi genbutsu: go and see</h2>
+<p>Toyota's twelfth principle is to go and see for yourself. Our version: the actual record image governs over the index entry that describes it; the live account screen governs over the automated data feed summarising it. We hold that rule because a feed once reported a position to us that was simply wrong, and a summary is a claim, not a fact. So our feeds are treated as indicative, and the source governs every conflict. It is slower. It is also how you avoid making expensive decisions from somebody else's transcription error.</p>
+<h2>Poka-yoke: make the error impossible</h2>
+<p>Catching defects is good; designing the process so the defect cannot pass is better. That is poka-yoke, error-proofing. Before any application is built, a dedupe check runs against the ledger — a duplicate cannot enter the line because the check stands in front of it. Gates and checklists are built the same way throughout: not as reminders to be careful, but as fixtures the work must physically pass through. Carefulness does not scale. Fixtures do.</p>
+<h2>Muda: waste, counted like a plant</h2>
+<p>Toyota names seven wastes — overproduction, waiting, transport, overprocessing, excess inventory, motion, and defects — and treats their elimination as the daily work, not a quarterly initiative. We count ours. In our first fifteen counted days, October 14–28, we logged 107 waste events: 46 per cent defect fixes, 29 per cent restarts, 25 per cent rework, with an escape rate of about 27 per cent. Those figures now appear in a daily report, next to the token numbers, where they belong. Because in an AI plant, tokens are the raw material, and wasted tokens are scrap. We count ours.</p>
+<h2>Kaizen and hansei: reflection is a process</h2>
+<p>The final principle is becoming a learning organisation through relentless reflection — hansei — and continuous improvement — kaizen. For us that is scheduled, not aspirational: a daily usage-and-waste report, a weekly quality readout against a fixed baseline, and written postmortems after every failure, kept in permanent memory so the lesson survives the week. Even a successful run gets its hansei — especially a successful run, when the defects you got away with are easiest to see.</p>
+<h2>People over AI</h2>
+<p>Above all of it stands the first principle and the other pillar of the Toyota Way: respect for people, and long-term philosophy over short-term gain. Our house doctrine is People Over AI, and it is the same idea in our words. AI does the volume; people keep the judgment — the gates, the restarts, the decisions about what the work is for. It also governs how we buy. We screen every vendor programme's intellectual-property terms before we accept its credits, however generous, because we don't give up our IP. A quarter's free capacity is a short-term number. Ownership of what we build is the long term. Our guarantee to clients runs on the same logic: proof, or you don't pay. And our founder's motto sets the standard the line is run to: always deliver more than promised.</p>
+<p>Toyota's deepest insight was that quality and cost are not a trade-off. They are the same problem, seen from two ends — every defect you prevent is capacity you get back. In production AI, tokens are the material, agents are the line, and the winners will be the companies that run both with that discipline. That is the plant we are building at Tech ConnectIT, LLC — one stopped line, one counted defect, and one level week at a time.</p>
+    </div>
+
+    <div class="article-close">
+      <div class="kicker">Work with us</div>
+      <div class="big">Putting AI to work on real infrastructure?</div>
+      <p>Tech ConnectIT is an AI-first company: AI consulting for organizations modernizing on real infrastructure, and original AI products, starting with The Voice Between Us.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="index.html#services">See our services</a>
+        <a class="btn btn-ghost" href="index.html#contact">Contact</a>
+      </div>
+    </div>
+
+    <p class="backline"><a href="articles.html">← All articles</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© 2026 Tech ConnectIT, LLC · A South Carolina LLC, organized 2018</div>
+    <div>Privacy Policy (in preparation)</div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You Can&#x27;t Build an Event-Driven Organization on Bad Data — Tech ConnectIT</title>
+<meta name="description" content="Garbage in, garbage out — at machine speed. An executive&#x27;s view.">
+<style>
+  :root{
+    --bg:#070d1a; --bg2:#0b1526; --panel:rgba(21,34,61,.72); --line:#22345e;
+    --ink:#eaf1fc; --muted:#a3b7d9; --accent:#3ea6ff; --accent2:#7c5cff;
+    --max:1100px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid rgba(34,52,94,.7);background:rgba(7,13,26,.82);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:20px;color:var(--ink)}
+  .brand .mark{width:34px;height:34px;flex:none}
+  .brand .ai{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav .tag{color:var(--muted);font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase}
+  @media(max-width:820px){.nav .tag{display:none}}
+  .nav nav a{color:var(--muted);margin-left:20px;font-size:15px}
+  .nav nav a:hover{color:var(--ink);text-decoration:none}
+  .nav nav a.current{color:var(--ink)}
+  .kicker{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;margin-bottom:20px}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0b1526;background:linear-gradient(92deg,var(--accent),var(--accent2));border-radius:999px;padding:4px 13px;margin-bottom:16px}
+  .btn{display:inline-block;padding:13px 28px;border-radius:999px;font-weight:650;font-size:16px}
+  .btn-primary{background:linear-gradient(92deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 8px 28px rgba(62,166,255,.35)}
+  .btn-primary:hover{text-decoration:none;filter:brightness(1.1)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(21,34,61,.5)}
+  .btn-ghost:hover{text-decoration:none;border-color:var(--accent)}
+  .article-wrap{max-width:780px;margin:0 auto;padding:0 24px}
+  .article-head{padding:72px 0 8px;background:
+    radial-gradient(900px 420px at 85% -10%,rgba(62,166,255,.18),transparent 60%),
+    radial-gradient(700px 380px at 0% 0%,rgba(124,92,255,.14),transparent 55%),var(--bg)}
+  .article-head h1{font-size:42px;line-height:1.15;font-weight:800;letter-spacing:-.5px}
+  @media(max-width:820px){.article-head h1{font-size:32px}}
+  .article-meta{color:var(--muted);font-size:15.5px;margin-top:20px}
+  .article-meta .byline{color:var(--ink);font-weight:650}
+  section.article-main{padding:44px 0 66px}
+  .article-body{font-size:17.5px}
+  .article-body p{color:#d9e5f7;margin-bottom:22px}
+  .article-body p.lede{font-size:19px;color:var(--muted)}
+  .article-body h2{font-size:27px;font-weight:750;letter-spacing:-.3px;margin:40px 0 14px}
+  .article-body h3{font-size:21px;font-weight:700;margin:32px 0 10px}
+  .article-body ul,.article-body ol{color:#d9e5f7;margin:0 0 22px 24px}
+  .article-body li{margin-bottom:8px}
+  .article-body blockquote{border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:0 0 22px;color:var(--muted);font-size:18px}
+  .article-body strong{color:var(--ink)}
+  .placeholder{border:1px dashed var(--line);border-radius:12px;padding:22px 24px;color:var(--muted);background:rgba(21,34,61,.4)}
+  .article-close{margin-top:52px;border:1px solid rgba(62,166,255,.4);border-radius:18px;padding:36px 40px;background:linear-gradient(135deg,rgba(62,166,255,.10),rgba(124,92,255,.08))}
+  .article-close .big{font-size:25px;font-weight:800;letter-spacing:-.3px;margin-bottom:10px}
+  .article-close p{color:var(--muted);font-size:16.5px;max-width:680px}
+  .article-close .cta{margin-top:24px;display:flex;gap:14px;flex-wrap:wrap}
+  @media(max-width:640px){.article-close{padding:28px 24px}}
+  .backline{margin-top:34px;font-size:15.5px}
+  footer{padding:34px 0 46px;color:var(--muted);font-size:14px;border-top:1px solid rgba(34,52,94,.55)}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="10" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="10" r="4.5" fill="#7c5cff"/><circle cx="38" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="38" r="4.5" fill="#7c5cff"/><circle cx="24" cy="24" r="5.5" fill="#eaf1fc"/><path d="M13 21 20 13M28 13l7 8M35 27l-7 8M20 35l-7-8M15 24h4M29 24h4M24 15v4M24 29v4" stroke="#3ea6ff" stroke-width="1.6" opacity=".8"/></svg>
+      Tech Connect<span class="ai">IT</span>
+    </div>
+    <div class="tag">An AI-First Company</div>
+    <nav>
+      <a href="index.html#what">What we do</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#proof">Proof</a>
+      <a href="articles.html" class="current" aria-current="page">Articles</a>
+      <a href="index.html#coming-soon">Coming Soon</a>
+      <a href="index.html#founder">Founder</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="article-head">
+  <div class="article-wrap">
+    <div class="kicker">Articles</div>
+        <h1>You Can&#x27;t Build an Event-Driven Organization on Bad Data</h1>
+        <p class="article-meta"><span class="byline">Frank Koziol, Founder &amp; President, Tech ConnectIT, LLC</span><br>October 13, 2026</p>
+  </div>
+</div>
+
+<section class="article-main">
+  <div class="article-wrap">
+        <div class="article-body">
+      <p class="lede"><em>Garbage in, garbage out — at machine speed. An executive&#x27;s view.</em></p>
+
+<p>Every executive I talk to wants the same thing: a data-driven company. Real-time dashboards. Event-driven operations that react the moment something happens. AI layered over all of it.</p>
+<p>Here's the part that never makes the strategy deck: if your data is bad, all of that machinery does is help you make the wrong decision faster.</p>
+<p>Garbage in, garbage out is the oldest saying in computing. It's also the one most often ignored in the boardroom.</p>
+<h2>Event-driven doesn't fix bad data — it accelerates it</h2>
+<p>In a traditional organization, bad data has a natural brake: people. An analyst glances at a report, something looks off, a call gets made. Slow, yes — but a human catches some of the garbage before it becomes a decision.</p>
+<p>An event-driven organization removes that brake on purpose. An event fires, a workflow triggers, inventory moves, an offer goes out, a ticket closes, a payment releases. Nobody eyeballs anything. That's the point of the design.</p>
+<p>Which means data quality stops being a reporting issue and becomes an operational risk. A bad field no longer produces a bad chart. It produces a bad action — executed instantly, at scale, before anyone knows it happened.</p>
+<h2>The trust collapse</h2>
+<p>I've seen this pattern more than once. Leadership funds the platform, the dashboards light up, and within a quarter somebody in the room catches a number that's plainly wrong. It doesn't matter that most of the data was fine. From that moment, every number gets second-guessed, the shadow spreadsheets come back, and the "single source of truth" turns into an expensive screensaver.</p>
+<p>Data quality isn't a technical metric. It's the credibility of every decision built on it.</p>
+<h2>A lesson from the factory floor</h2>
+<p>I spent part of my career as a quality engineer, and the data world is relearning a lesson manufacturing settled decades ago: you cannot inspect quality into a product at the end of the line. By the time the inspector finds the defect, you've already paid to build it, ship it, and explain it.</p>
+<p>Data works the same way. Every organization I've seen with a data quality problem pays analysts to clean the same errors every month, downstream, forever — instead of fixing the one place the error gets in, upstream, once.</p>
+<p>Bad data is almost never born in the warehouse. It's born at the point of entry: a free-text field where a dropdown belonged, a system that accepts a blank where a value is required, two departments defining the same word differently, a record created three times because nobody owned it. The warehouse doesn't create the garbage. It just stores it faithfully.</p>
+<h2>What the executive has to do</h2>
+<p>Data quality is not an IT project. It's an operating discipline, and it belongs to the business. Five things separate the companies that have it from the ones that talk about it:</p>
+<ul>
+<li><strong>Name an owner for every critical data element.</strong> Not a committee — a person, accountable for that data being right the way a plant manager is accountable for a line.</li>
+<li><strong>Validate at the source.</strong> The cheapest place to fix an error is the moment it's created. Every fix you push downstream costs ten times more.</li>
+<li><strong>Define your terms once.</strong> If Sales and Finance count a "customer" differently, you don't have one data problem — you have two companies. Agree on the definition, in writing, and make the systems enforce it.</li>
+<li><strong>Measure data quality like production quality.</strong> Completeness, accuracy, timeliness — tracked, trended, and reviewed in the same operations rhythm as every other number you run the business on. What gets measured gets fixed.</li>
+<li><strong>Fix the process, not the report.</strong> Stop funding cleanup. Fund prevention. The goal isn't a cleaner dashboard this month — it's data that's born clean.</li>
+</ul>
+<h2>Then there's AI</h2>
+<p>Everything above doubles with AI. A model fed bad data doesn't hedge. It produces fluent, confident, wrong answers — at a scale no team can audit. AI doesn't average out your data problems. It industrializes them.</p>
+<h2>The sequence matters</h2>
+<p>Clean data first. Then events. Then automation. Then AI. Run that sequence in reverse and you get the same result every time: an expensive machine for being wrong quickly.</p>
+<p>My work has always come down to one line: find where the problem enters, and fix it there. In an event-driven organization, your data is the product — every decision downstream is built out of it.</p>
+<p>Garbage in, garbage out. The only choice you get is how fast.</p>
+    </div>
+
+    <div class="article-close">
+      <div class="kicker">Work with us</div>
+      <div class="big">Putting AI to work on real infrastructure?</div>
+      <p>Tech ConnectIT is an AI-first company: AI consulting for organizations modernizing on real infrastructure, and original AI products, starting with The Voice Between Us.</p>
+      <div class="cta">
+        <a class="btn btn-primary" href="index.html#services">See our services</a>
+        <a class="btn btn-ghost" href="index.html#contact">Contact</a>
+      </div>
+    </div>
+
+    <p class="backline"><a href="articles.html">← All articles</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© 2026 Tech ConnectIT, LLC · A South Carolina LLC, organized 2018</div>
+    <div>Privacy Policy (in preparation)</div>
+  </div>
+</footer>
+</body>
+</html>
