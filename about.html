@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Tech ConnectIT</title>
+<meta name="description" content="About Tech ConnectIT.AI and its founder, Frank Koziol — an AI-first company built on 30+ years of enterprise infrastructure, network engineering, and cybersecurity leadership.">
+<style>
+  :root{
+    --bg:#070d1a; --bg2:#0b1526; --panel:rgba(21,34,61,.72); --line:#22345e;
+    --ink:#eaf1fc; --muted:#a3b7d9; --accent:#3ea6ff; --accent2:#7c5cff;
+    --max:1100px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  header{border-bottom:1px solid rgba(34,52,94,.7);background:rgba(7,13,26,.82);backdrop-filter:blur(10px);position:sticky;top:0;z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:15px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:20px;color:var(--ink)}
+  .brand .mark{width:34px;height:34px;flex:none}
+  .brand .ai{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav .tag{color:var(--muted);font-size:12.5px;letter-spacing:1.8px;text-transform:uppercase}
+  @media(max-width:820px){.nav .tag{display:none}}
+  .nav nav a{color:var(--muted);margin-left:20px;font-size:15px}
+  .nav nav a:hover{color:var(--ink);text-decoration:none}
+  .hero{padding:84px 0 0;background:
+    radial-gradient(900px 420px at 85% -10%,rgba(62,166,255,.18),transparent 60%),
+    radial-gradient(700px 380px at 0% 0%,rgba(124,92,255,.14),transparent 55%),var(--bg)}
+  .kicker{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:2.6px;text-transform:uppercase;margin-bottom:20px}
+  h1{font-size:54px;line-height:1.1;font-weight:800;letter-spacing:-.6px;max-width:820px}
+  h1 .grad{background:linear-gradient(92deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{color:var(--muted);font-size:19px;max-width:780px;margin-top:24px}
+  .cta{margin-top:34px;display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:13px 28px;border-radius:999px;font-weight:650;font-size:16px}
+  .btn-primary{background:linear-gradient(92deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 8px 28px rgba(62,166,255,.35)}
+  .btn-primary:hover{text-decoration:none;filter:brightness(1.1)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(21,34,61,.5)}
+  .btn-ghost:hover{text-decoration:none;border-color:var(--accent)}
+  .hero-art{margin:52px auto 0;max-width:var(--max);padding:0 24px}
+  .hero-art .frame{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.55),0 0 0 1px rgba(62,166,255,.08),0 0 90px rgba(62,166,255,.12)}
+  .hero-art img{display:block;width:100%;height:auto}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:44px 0 8px}
+  @media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}h1{font-size:38px}}
+  .stat{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center}
+  .stat .n{font-size:30px;font-weight:800;background:linear-gradient(92deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat .l{color:var(--muted);font-size:13.5px;margin-top:4px;letter-spacing:.4px}
+  section{padding:66px 0;border-top:1px solid rgba(34,52,94,.55)}
+  h2{font-size:31px;font-weight:750;margin-bottom:14px;letter-spacing:-.3px}
+  .sub{color:var(--muted);max-width:760px;margin-bottom:34px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+  .card:hover{transform:translateY(-4px);border-color:rgba(62,166,255,.55);box-shadow:0 18px 44px rgba(0,0,0,.45),0 0 40px rgba(62,166,255,.10)}
+  .card h3{font-size:21px;margin-bottom:10px}
+  .card .pill{display:inline-block;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--accent);border:1px solid var(--line);border-radius:999px;padding:3px 11px;margin-bottom:14px;background:rgba(62,166,255,.07)}
+  .card p{color:var(--muted);font-size:16px}
+  .card ul{list-style:none;margin-top:16px}
+  .card li{color:var(--muted);font-size:15.5px;padding:9px 0;border-bottom:1px solid rgba(34,52,94,.55)}
+  .card li:last-child{border-bottom:none;padding-bottom:0}
+  .card li strong{color:var(--ink)}
+  .card .bignum{font-size:46px;font-weight:800;line-height:1.05;margin-top:18px;background:linear-gradient(92deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .card .bignum-cap{color:var(--muted);font-size:14.5px;margin-top:5px;max-width:340px}
+  .card .metrics-h{margin-top:22px;font-size:11.5px;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent)}
+  .card ul.metrics{margin-top:6px}
+  .card ul.metrics li strong{text-transform:uppercase;letter-spacing:.6px}
+  .svc-head{max-width:840px;margin-bottom:36px}
+  .svc-head .big{font-size:27px;font-weight:750;letter-spacing:-.3px;line-height:1.25}
+  .svc-head .pay{font-size:20px;color:var(--accent);font-weight:650;margin-top:8px}
+  .svc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 28px;transition:border-color .25s ease,box-shadow .25s ease}
+  .svc:hover{border-color:rgba(62,166,255,.55);box-shadow:0 14px 36px rgba(0,0,0,.4)}
+  .svc h3{font-size:18.5px;margin-bottom:8px}
+  .svc p{color:var(--muted);font-size:15.5px}
+  .guarantee{border:1px solid rgba(62,166,255,.4);border-radius:18px;padding:40px 44px;background:linear-gradient(135deg,rgba(62,166,255,.10),rgba(124,92,255,.08))}
+  .guarantee .big{font-size:28px;font-weight:800;letter-spacing:-.3px;margin-bottom:12px}
+  .guarantee p{color:var(--muted);font-size:17px;max-width:840px}
+  .sheet{border:1px solid var(--line);border-radius:18px;padding:40px 44px;background:var(--panel);margin-bottom:22px}
+  .sheet:last-child{margin-bottom:0}
+  .badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#0b1526;background:linear-gradient(92deg,var(--accent),var(--accent2));border-radius:999px;padding:4px 13px;margin-bottom:16px}
+  .sheet h3{font-size:25px;font-weight:750;margin-bottom:10px;letter-spacing:-.3px}
+  .sheet .lead{font-size:18px;color:var(--ink);max-width:840px}
+  .sheet p{color:var(--muted);font-size:16px;max-width:840px;margin-top:12px}
+  .sheet ul{list-style:none;margin-top:14px;max-width:840px}
+  .sheet li{color:var(--muted);font-size:16px;padding:9px 0;border-bottom:1px solid rgba(34,52,94,.55)}
+  .sheet li:last-child{border-bottom:none}
+  .sheet li strong{color:var(--ink)}
+  @media(max-width:640px){.guarantee,.sheet{padding:30px 24px}}
+  .proof{list-style:none}
+  .proof li{display:flex;gap:16px;padding:20px 0;border-bottom:1px solid rgba(34,52,94,.55);color:var(--muted);font-size:16.5px}
+  .proof li:last-child{border-bottom:none}
+  .proof .chk{flex:none;width:26px;height:26px;margin-top:2px}
+  .proof strong{color:var(--ink)}
+  .manifesto{position:relative;border-radius:18px;padding:44px;background:linear-gradient(135deg,rgba(62,166,255,.12),rgba(124,92,255,.12));border:1px solid rgba(62,166,255,.35);box-shadow:0 0 70px rgba(124,92,255,.12) inset,0 24px 60px rgba(0,0,0,.4)}
+  .manifesto h2{font-size:35px}
+  .manifesto p{color:var(--muted);max-width:840px;font-size:17px}
+  .founder{display:grid;grid-template-columns:118px 1fr;gap:28px;align-items:start}
+  @media(max-width:640px){.founder{grid-template-columns:1fr}}
+  .monogram{width:112px;height:112px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:39px;font-weight:800;color:#fff;box-shadow:0 14px 36px rgba(62,166,255,.35)}
+  .founder p{color:var(--muted);font-size:16.5px}
+  .contact{background:linear-gradient(180deg,var(--bg2),rgba(21,34,61,.6));border:1px solid var(--line);border-radius:16px;padding:38px;text-align:center}
+  .contact .mail{font-size:23px;font-weight:650}
+  footer{padding:34px 0 46px;color:var(--muted);font-size:14px;border-top:1px solid rgba(34,52,94,.55)}
+  footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  .about-hero{padding:72px 0 8px}
+  .about-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:38px;max-width:820px}
+  .about-card .role{color:var(--accent);font-size:13px;font-weight:600;letter-spacing:1.8px;text-transform:uppercase;margin-bottom:14px}
+  .about-card p{color:var(--muted);font-size:17px;margin-bottom:16px}
+  .about-card p strong{color:var(--ink)}
+  .about-card .mail{font-size:17px;font-weight:650}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="10" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="10" r="4.5" fill="#7c5cff"/><circle cx="38" cy="24" r="4.5" fill="#3ea6ff"/><circle cx="24" cy="38" r="4.5" fill="#7c5cff"/><circle cx="24" cy="24" r="5.5" fill="#eaf1fc"/><path d="M13 21 20 13M28 13l7 8M35 27l-7 8M20 35l-7-8M15 24h4M29 24h4M24 15v4M24 29v4" stroke="#3ea6ff" stroke-width="1.6" opacity=".8"/></svg>
+      Tech Connect<span class="ai">IT</span>
+    </div>
+    <div class="tag">An AI-First Company</div>
+    <nav>
+      <a href="index.html#what">What we do</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#proof">Proof</a>
+      <a href="articles.html">Articles</a>
+      <a href="about.html" class="current" aria-current="page">About</a>
+      <a href="index.html#coming-soon">Coming Soon</a>
+      <a href="index.html#founder">Founder</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="about-hero" style="border-top:none">
+    <div class="wrap">
+      <div class="kicker">About Us</div>
+      <h1 style="font-size:42px;margin-bottom:18px">The people behind <span class="grad">Tech ConnectIT</span></h1>
+      <p class="sub">Tech ConnectIT.AI is an AI-first company founded on more than 30 years of enterprise infrastructure. We build AI products and advise on AI adoption — with humans firmly in control of the systems we deploy.</p>
+      <div class="about-card">
+        <h2 style="margin-bottom:6px">Frank Koziol</h2>
+        <div class="role">Founder &amp; President, Tech ConnectIT.AI</div>
+        <p><strong>Frank Koziol</strong> is a technology executive with three decades of leadership across network engineering, cybersecurity, and large-scale IT operations. At Boeing, he led infrastructure and analytics organizations and drove 128 safety and quality systems to Green — consolidating them to 21 and saving $1M a year. Earlier, he founded and ran Netigy, a network services company, and directed network and security architecture at Fujitsu.</p>
+        <p>He holds a Master's in Computer Information Science from La Salle University. His current work centers on AI governance, network identity, and designing AI systems that stay under human control.</p>
+        <p class="mail">Contact: <a href="mailto:frank@techconnectit.ai">frank@techconnectit.ai</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap row">
+    <div>© 2026 Tech ConnectIT, LLC · A South Carolina LLC, organized 2018</div>
+    <div><a href="privacy-policy.html">Privacy Policy</a></div>
+  </div>
+</footer>
+</body>
+</html>
